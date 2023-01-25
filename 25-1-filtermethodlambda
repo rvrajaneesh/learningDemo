@@ -1,0 +1,39 @@
+import java.util.List;
+
+import javax.lang.model.element.Element;
+
+public class functional {
+
+    public static void main(String[] args) {
+        List<String> list = List.of("New", "mew", "cew", "DEmo", "memo", "Sumo");
+        List<Integer> numb = List.of(4, 6, 7, 7, 8);
+
+        // printwithfilter(list);
+        printnumbwithFilter(numb);
+        printwithfiltertext(list);
+    }
+
+    private static void printwithfilter(List<String> list) {
+        for (String string : list) {
+            if (string.endsWith("mo")) {
+                System.out.println("String list = " + string);
+            }
+        }
+    }
+
+    private static void printwithFP(List<String> list) {
+        list.stream().forEach(
+                element -> System.out.println("elemment is " + element));
+    }
+
+    private static void printwithfiltertext(List<String> list) {
+        list.stream().filter(i -> i.endsWith("ew")).forEach(
+                element -> System.out.println("elemment is " + element));
+    }
+
+    private static void printnumbwithFilter(List<Integer> numb) {
+        numb.stream().filter(element -> element > 6)
+                .forEach(
+                        element -> System.out.println("elemment is " + element));
+    }
+}
