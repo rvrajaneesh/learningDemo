@@ -1,1 +1,31 @@
 
+import java.util.List;
+
+import javax.lang.model.element.Element;
+
+public class functional {
+
+    public static void main(String[] args) {
+        List<String> list = List.of("New", "DEmo", "learn");
+        List<Integer> numb = List.of(4, 6, 7, 7, 8);
+
+        printwithFP(list);
+        printnumbwithFP(numb);
+    }
+
+    private static void printbasic(List<String> list) {
+        for (String string : list) {
+            System.out.println("String list = " + string);
+        }
+    }
+
+    private static void printwithFP(List<String> list) {
+        list.stream().forEach(
+                element -> System.out.println("elemment is " + element));
+    }
+
+    private static void printnumbwithFP(List<Integer> numb) {
+        numb.stream().forEach(
+                element -> System.out.println("elemment is " + element));
+    }
+}
